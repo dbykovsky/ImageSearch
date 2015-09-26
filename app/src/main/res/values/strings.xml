@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">ImageSearch</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="hint_search">Enter search query...</string>
+    <string name="button_search">Search</string>
+    <string name="title_activity_image_display">Full screen</string>
+
+    <color name="blackGray">#2E2E2E</color>
+    <color name="yellow_light">#73FFFF00</color>
+    <color name="dark_blue">#0000FF</color>
+    <color name="light_blue">#add8e6</color>
+
+    <string name="spinner_prompt">pick</string>
+
+
+
+</resources>

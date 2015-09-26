@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="popup_width">800px</dimen>
+
+    <dimen name="popup_height">600px</dimen>
+</resources>

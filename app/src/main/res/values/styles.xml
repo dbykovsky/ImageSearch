@@ -1,0 +1,80 @@
+<resources>
+
+<!--    &lt;!&ndash; Base application theme. &ndash;&gt;
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        &lt;!&ndash; Customize your theme here. &ndash;&gt;
+    </style>-->
+
+
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+
+        <!-- Apply default style for dialogs -->
+
+        <item name="dialogTheme">@style/AppDialogTheme</item>
+
+        <!-- Apply default style for alert dialogs -->
+
+        <item name="alertDialogTheme">@style/AppAlertTheme</item>
+
+    </style>
+
+
+
+    <!-- Define your custom dialog theme here extending from base -->
+
+    <style name="AppDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+
+        <item name="colorPrimary">@color/dark_blue</item>
+
+        <item name="colorPrimaryDark">#000</item>
+
+        <item name="colorAccent">@color/dark_blue</item>
+
+        <item name="colorControlNormal">@color/dark_blue</item>
+
+        <item name="android:windowBackground">@android:color/transparent</item>
+
+        <item name="android:background">#33818181</item>
+
+        <item name="android:textColorHighlight">@color/yellow_light</item>
+
+        <item name="android:title">@android:color/holo_red_dark</item>
+
+        <item name="android:windowTitleBackgroundStyle">@color/yellow_light</item>
+
+        <item name="android:titleTextStyle">@color/yellow_light</item>
+
+        <item name="android:gravity">center_horizontal</item>
+
+
+
+
+    </style>
+
+    <style name="PauseDialogTitle" parent="@android:style/TextAppearance.DialogWindowTitle">
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="PauseDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowTitleStyle">@style/PauseDialogTitle</item>
+    </style>
+
+
+    <!-- Define your custom alert theme here extending from base -->
+
+    <style name="AppAlertTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+
+        <item name="colorPrimary">@color/dark_blue</item>
+
+        <item name="colorAccent">@color/dark_blue</item>
+
+        <item name="colorPrimaryDark">#000</item>
+
+        <item name="colorControlNormal">@color/dark_blue</item>
+
+        <item name="android:textColorHighlight">@color/light_blue</item>
+
+    </style>
+
+</resources>
