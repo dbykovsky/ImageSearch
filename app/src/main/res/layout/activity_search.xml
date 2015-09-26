@@ -1,40 +1,16 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-
     tools:context=".SearchActivity">
-
-
-<!--    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/et_queryInput"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/bt_submitQuery"
-        android:layout_toStartOf="@+id/bt_submitQuery"
-        android:hint="@string/hint_search" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_search"
-        android:id="@+id/bt_submitQuery"
-        android:onClick="onImageSearch"
-        android:layout_alignBottom="@+id/et_queryInput"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:hint="@string/button_search" />-->
 
     <GridView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/gv_resultView"
+        android:stretchMode="columnWidth"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-
+        android:verticalSpacing="1dp"
+        android:horizontalSpacing="1dp"
         android:numColumns="3" />
 </RelativeLayout>

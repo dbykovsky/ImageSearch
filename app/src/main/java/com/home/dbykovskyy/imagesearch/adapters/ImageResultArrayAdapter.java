@@ -23,15 +23,12 @@ public class ImageResultArrayAdapter extends ArrayAdapter<ImageResult> {
 
     static class ViewHolder{
         ImageView ivImage;
-        TextView tvTextCaption;
-
     }
 
     public ImageResultArrayAdapter(Context context, List<ImageResult> images){
 
         super(context, R.layout.item_image_result, images);
     }
-
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -44,23 +41,15 @@ public class ImageResultArrayAdapter extends ArrayAdapter<ImageResult> {
 
             LayoutInflater inflater = LayoutInflater.from(getContext());
             convertView = inflater.inflate(R.layout.item_image_result, parent, false);
-
             viewHolder.ivImage = (ImageView) convertView.findViewById(R.id.iv_single_image_result);
-            viewHolder.tvTextCaption = (TextView) convertView.findViewById(R.id.tv_single_iamge_result_title);
             convertView.setTag(viewHolder);
         }else{
              viewHolder = (ViewHolder) convertView.getTag();
         }
 
-        //viewHolder.tvTextCaption.setText(Html.fromHtml(imageResult.getTitle()));
-
-        //setting photo
+        //loading photo
         viewHolder.ivImage.setImageResource(0);
-        Picasso.with(getContext()).load(imageResult.getThumbnailUrl()).resize(100, 100).centerInside().into(viewHolder.ivImage);
-
-
-
-
+        Picasso.with(getContext()).load(imageResult.getThumbnailUrl()).fit().centerCrop().into(viewHolder.ivImage);
         return convertView;
     }
 }

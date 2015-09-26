@@ -56,10 +56,17 @@ public class FilterFragment {
 
     public FilterFragment(List<String> ls){
 
-        this.imageSize = ls.get(0);
-        this.imageColor = ls.get(1);
-        this.imageType = ls.get(2);
+        this.imageColor = ls.get(0);
+        this.imageType = ls.get(1);
+        this.imageSize = ls.get(2);
         this.website = ls.get(3);
+    }
+
+    public void clearFilters(){
+        this.imageSize = "not selected";
+        this.imageColor = "not selected";
+        this.imageType = "not selected";
+        this.website = "";
     }
 
 

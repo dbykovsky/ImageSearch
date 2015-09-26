@@ -14,7 +14,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
         android:maxLines="2"
         android:ellipsize="end"
         android:id="@+id/tv_single_iamge_result_title" />

@@ -7,27 +7,21 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import android.support.v4.app.DialogFragment;
-import android.util.DisplayMetrics;
-import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
+
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
+
 
 import com.home.dbykovskyy.imagesearch.R;
 import com.home.dbykovskyy.imagesearch.activities.SearchActivity;
 
-import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -69,40 +63,15 @@ public class FilterDialogFragment extends DialogFragment {
         return filterFragment;
     }
 
-/*    @Override
-    public Dialog onCreateDialog(Bundle savedInstanceState) {
-        String title = getArguments().getString("title");
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
-        alertDialogBuilder.setTitle(title);
-
-        //alertDialogBuilder.setSingleChoiceItems(ItemPriority.priority, -1, onChoiceClickListener);
-        alertDialogBuilder.setPositiveButton("SAVE", positiveClickListener);
-        alertDialogBuilder.setNegativeButton("Cancel", cancelClickListener);
-        return alertDialogBuilder.create();
-    }*/
-
-/*    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        //setStyle(DialogFragment.STYLE_NO_TITLE, android.R.style.Theme_Holo_Light_Dialog);
-    }*/
 
     @Override
     public void onResume() {
         super.onResume();
-/*        int width = getResources().getDimensionPixelSize(R.dimen.popup_width);
-        int height = getResources().getDimensionPixelSize(R.dimen.popup_height);
-        getDialog().getWindow().setLayout(width, height);*/
-
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setStyle(STYLE_NO_TITLE, 0);
-
-        //setStyle(STYLE_NO_INPUT, R.style.AppDialogTheme);
-
     }
 
     @Override
@@ -124,7 +93,6 @@ public class FilterDialogFragment extends DialogFragment {
         }
 
         //SET TEXT
-
         final EditText et_site= (EditText)view.findViewById(R.id.et_site);
         et_site.setGravity(Gravity.LEFT);
 
