@@ -75,14 +75,15 @@ public class SearchActivity extends AppCompatActivity {
         imageAdapter = new ImageResultArrayAdapter(this,imageResults);
         gvResults.setAdapter(imageAdapter);
 
-
-
         gvResults.setOnScrollListener(new EndlessScrollListener() {
             @Override
-            public void onLoadMore(int page, int totalItemsCount) {
+            public boolean onLoadMore(int page, int totalItemsCount) {
                 //paginate up to 7 pages
                 if (page <= 7) {
                     customLoadMoreDataFromApi(page);
+                    return true;
+                }else{
+                    return false;
                 }
             }
 
@@ -118,7 +119,6 @@ public class SearchActivity extends AppCompatActivity {
                     try {
                         imageJsonresults = response.getJSONObject("responseData").getJSONArray("results");
                         imageAdapter.addAll(ImageResult.getFromJsonArray(imageJsonresults));
-                        //Log.d("DEBUG", imageJsonresults.toString());
 
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -131,7 +131,6 @@ public class SearchActivity extends AppCompatActivity {
                 }
             });
     }
-
 
 
     @Override
@@ -151,16 +150,12 @@ public class SearchActivity extends AppCompatActivity {
                 AsyncHttpClient client = new AsyncHttpClient();
                 currentSearchQuery = constructUrl(query);
                 client.addHeader("Accept-Encoding", "identity");
-
-                Log.d("DEBUG", "My queryyyyyyyyyyyyyyyyyyyy 222222 page " + currentSearchQuery);
-
                 client.get(currentSearchQuery, null, new JsonHttpResponseHandler() {
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                         JSONArray imageJsonresults;
                         try {
                             imageJsonresults = response.getJSONObject("responseData").getJSONArray("results");
-
                             //since it's a new search, clearing adapter form previous results
                             imageAdapter.clear();
                             imageAdapter.addAll(ImageResult.getFromJsonArray(imageJsonresults));

@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.home.dbykovskyy.imagesearch.R;
 import com.home.dbykovskyy.imagesearch.fragments.InternetConnectivityFragment;
 import com.home.dbykovskyy.imagesearch.models.ImageResult;
+import com.home.dbykovskyy.imagesearch.utils.TouchImageView;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
@@ -27,17 +28,19 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import uk.co.senab.photoview.PhotoViewAttacher;
+
 public class ImageDisplayActivity extends AppCompatActivity {
     private ShareActionProvider mShareAction;
+    PhotoViewAttacher mAttacher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_display);
-        ImageResult imageRes = (ImageResult) getIntent().getParcelableExtra("url");
+        ImageResult imageRes = getIntent().getParcelableExtra("url");
 
         ImageView iv_fullScreenPhoto = (ImageView) findViewById(R.id.iv_full_screen);
-
 
         Picasso.with(this).load(imageRes.getFullUrl()).fit().centerInside().into(iv_fullScreenPhoto, new Callback() {
             @Override
@@ -50,6 +53,10 @@ public class ImageDisplayActivity extends AppCompatActivity {
 
             }
         });
+
+        //allow to zoom in and out
+        mAttacher = new PhotoViewAttacher(iv_fullScreenPhoto);
+
 
         getSupportActionBar().setTitle(Html.fromHtml(imageRes.getTitle()));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
