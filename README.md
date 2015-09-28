@@ -37,13 +37,14 @@ The following **additional** features are implemented:
 * [x] List anything else that you can get done to improve the app functionality!
 
 Used Parcelable for objects that are passed to other activities
+For zooming images I used this library https://github.com/chrisbanes/PhotoView
 
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/TYf9pLL.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 

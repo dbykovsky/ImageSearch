@@ -82,12 +82,12 @@ public class SearchActivity extends AppCompatActivity {
                 if (page <= 7) {
                     customLoadMoreDataFromApi(page);
                     return true;
-                }else{
+                } else {
                     return false;
                 }
             }
-
         });
+
 
         //set up image click listener
         gvResults.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -105,13 +105,12 @@ public class SearchActivity extends AppCompatActivity {
     public void customLoadMoreDataFromApi(int offset) {
         // This method probably sends out a network request and appends new data items to your adapter.
         // Use the offset value and add it as a parameter to your API request to retrieve paginated data.
-        // Deserialize API response and then construct new objects to append to the adapter
-
+        //
             AsyncHttpClient client = new AsyncHttpClient();
             client.addHeader("Accept-Encoding", "identity");
             //adding offset to each
             String query = currentSearchQuery+ "&start=" + paginationMap.get(offset);
-            Log.d("DEBUG", "Search query is >>>>>>>>>>>>>>>>>>> " + query);
+            Log.d("DEBUG", "Search query 2222 is >>>>>>>>>>>>>>>>>>> " + query);
             client.get(query, null, new JsonHttpResponseHandler() {
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
@@ -150,6 +149,7 @@ public class SearchActivity extends AppCompatActivity {
                 AsyncHttpClient client = new AsyncHttpClient();
                 currentSearchQuery = constructUrl(query);
                 client.addHeader("Accept-Encoding", "identity");
+                Log.d("DEBUG", "Search query 11111 is >>>>>>>>>>>>>>>>>>> " + currentSearchQuery);
                 client.get(currentSearchQuery, null, new JsonHttpResponseHandler() {
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
@@ -221,10 +221,6 @@ public class SearchActivity extends AppCompatActivity {
         int id = item.getItemId();
         if(id==R.id.miFiltersMenu) {
             showAlertDialog();
-            Toast.makeText(this, "My filters clicked", Toast.LENGTH_SHORT).show();
-        }else if(id==R.id.action_search){
-            Toast.makeText(this, "My search is clicked", Toast.LENGTH_SHORT).show();
-
         }
         return super.onOptionsItemSelected(item);
     }
@@ -233,7 +229,6 @@ public class SearchActivity extends AppCompatActivity {
     //gening data back for the Fragment dialog through this method
     public void onUserSelectValue(List<String> allFilterValues) {
         filters = new FilterFragment(allFilterValues);
-        Toast.makeText(this,"I received that shit ", Toast.LENGTH_SHORT).show();
     }
 
     public boolean isConnected(Context context) {

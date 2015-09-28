@@ -41,7 +41,6 @@ public class ImageDisplayActivity extends AppCompatActivity {
         ImageResult imageRes = getIntent().getParcelableExtra("url");
 
         ImageView iv_fullScreenPhoto = (ImageView) findViewById(R.id.iv_full_screen);
-
         Picasso.with(this).load(imageRes.getFullUrl()).fit().centerInside().into(iv_fullScreenPhoto, new Callback() {
             @Override
             public void onSuccess() {
@@ -56,7 +55,6 @@ public class ImageDisplayActivity extends AppCompatActivity {
 
         //allow to zoom in and out
         mAttacher = new PhotoViewAttacher(iv_fullScreenPhoto);
-
 
         getSupportActionBar().setTitle(Html.fromHtml(imageRes.getTitle()));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
